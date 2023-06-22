@@ -7,7 +7,7 @@ import gradio as gr
 
 # Data preparation
 
-df = pd.read_csv(r"train.csv.zip")
+df = pd.read_csv(r"https://raw.githubusercontent.com/shivammishrr/Comment-Toxicity-Prediction-using-Gradio/main/train.csv.zip")
 
 # Creating Word Embeddings
 from tensorflow import TextVectorization
@@ -20,7 +20,7 @@ vectorized_text = vectorizer(X.values)
 print('Vectorization Complete!')
 
 # Loading The Model
-model = tf.keras.models.load_model('hate_model.h5')
+model = tf.keras.models.load_model('toxicity.h5')
 
 # To display results
 def score_comment(comment):
